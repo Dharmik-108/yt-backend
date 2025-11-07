@@ -5,7 +5,6 @@ import { getYoutubeVideoData } from "../lib/youtubeData.js";
 
 const router = express.Router();
 
-// POST / with JSON body { url }
 router.post("/", async (req, res) => {
     const { url } = req.body;
     if (!url) return res.status(400).json({ error: "Missing URL" });

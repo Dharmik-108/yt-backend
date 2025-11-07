@@ -43,7 +43,6 @@ router.get("/", async (req, res) => {
                     return res.status(500).end("yt-dlp process failed");
                 }
             } else {
-                // ensure response ends after stream completes
                 try { res.end(); } catch (e) { }
             }
         });
