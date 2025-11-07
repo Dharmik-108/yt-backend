@@ -74,7 +74,6 @@ router.get("/", async (req, res) => {
         if (typeof stream.pipeAsync === "function") {
             await stream.pipeAsync(res);
         } else {
-            // fallback: pipe and wait for end
             stream.pipe(res);
             await new Promise((resolve, reject) => {
                 stream.on("end", resolve);
