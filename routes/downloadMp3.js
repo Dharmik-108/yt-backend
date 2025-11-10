@@ -1,5 +1,6 @@
 import express from "express";
 import { spawn } from "child_process";
+import { withRateLimit } from "../lib/withRateLimit.js";
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -56,4 +57,4 @@ router.get("/", async (req, res) => {
     }
 });
 
-export default router;
+export default withRateLimit(router);

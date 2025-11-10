@@ -2,6 +2,7 @@ import express from "express";
 import { fetchYoutubeMedia, fetchYoutubePost } from "../lib/youtubeRapidApis.js";
 import { fetchPlaylistData } from "../lib/youtubePlaylistData.js";
 import { getYoutubeVideoData } from "../lib/youtubeData.js";
+import { withRateLimit } from "../lib/withRateLimit.js";
 
 const router = express.Router();
 
@@ -52,4 +53,4 @@ router.post("/", async (req, res) => {
     }
 });
 
-export default router;
+export default withRateLimit(router);
