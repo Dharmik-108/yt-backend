@@ -8,7 +8,7 @@ How to use (short):
    ```bash
    cd terraform
    terraform init
-   terraform apply -var 'aws_region=ap-south-1' -auto-approve
+   terraform apply -var 'aws_region=ap-southeast-2' -auto-approve
    ```
 5. After apply, note the ALB DNS output and open it in browser.
 
